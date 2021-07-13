@@ -4,7 +4,7 @@
   "description": "Serverless web application for uploading files to S3",
   "main": "src/index.js",
   "scripts": {
-    "build": "node_modules/gulp/bin/gulp.js",
+    "build": "node ./node_modules/gulp/bin/gulp.js",
     "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $CODE_BUCKET",
     "deploy": "aws cloudformation deploy --template-file packaged-template.yml --capabilities CAPABILITY_IAM --stack-name dev-uploader-$USER --parameter-overrides destBucket=$DEST_BUCKET"
   },
